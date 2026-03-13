@@ -1,1 +1,21 @@
-“Complete the implementation in sources/dff.sv.”
+“Write a synthesizable Verilog module that estimates the base-2 logarithm of a 
+16-bit half-precision floating-point number.
+
+Requirements:
+
+The input is a 16-bit IEEE-754 half-precision value.
+
+The output should represent the logarithm in a signed fixed-point format with fractional precision.
+
+The implementation should be hardware-efficient.
+
+The design should make use of the structure of floating-point numbers (sign, exponent, mantissa) to derive the logarithm.
+
+The design should be combinational or minimally sequential and synthesizable.
+
+use approximation logic.
+
+Inputs:
+fp16_in: 16 bit IEEE 754 half-precision format
+Output:
+log_out_q5_10: 16 bit Signed Q5.10 fixed-point log2(x)”
