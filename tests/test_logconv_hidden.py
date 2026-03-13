@@ -126,6 +126,165 @@ async def test_encryption_9(dut):
 
 
 
+####################################################################
+
+@cocotb.test()
+async def test_encryption_corner_21(dut):
+    dut.fp16_in.value = 0x0000
+    await Timer(5, unit="ns")
+    assert dut.log_out_q5_10.value == 32768
+
+
+
+
+#@cocotb.test()
+#async def test_encryption_corner_20(dut):
+#    dut.fp16_in.value = 0x6C2A
+#    await Timer(5, unit="ns")
+#    assert dut.log_out_q5_10.value == 13354
+
+@cocotb.test()
+async def test_encryption_corner_19(dut):
+    dut.fp16_in.value = 0x52F4
+    await Timer(5, unit="ns")
+    assert dut.log_out_q5_10.value == 5876
+
+
+@cocotb.test()
+async def test_encryption_corner_18(dut):
+    dut.fp16_in.value = 0x4A6D
+    await Timer(5, unit="ns")
+    assert dut.log_out_q5_10.value == 3693
+
+
+#@cocotb.test()
+#async def test_encryption_corner_17(dut):
+#    dut.fp16_in.value = 0x63FF
+#    await Timer(5, unit="ns")
+#    assert dut.log_out_q5_10.value == 11263
+
+
+#@cocotb.test()
+#async def test_encryption_corner_16(dut):
+#    dut.fp16_in.value = 0x5BFF
+#    await Timer(5, unit="ns")
+#    assert dut.log_out_q5_10.value == 9215
+
+
+@cocotb.test()
+async def test_encryption_corner_15(dut):
+    dut.fp16_in.value = 0x3C01
+    await Timer(5, unit="ns")
+    assert dut.log_out_q5_10.value == 1
+
+
+
+@cocotb.test()
+async def test_encryption_corner_14(dut):
+    dut.fp16_in.value = 0x3C00
+    await Timer(5, unit="ns")
+    assert dut.log_out_q5_10.value == 0
+
+
+@cocotb.test()
+async def test_encryption_corner_13(dut):
+    dut.fp16_in.value = 0x3BFF
+    await Timer(5, unit="ns")
+    assert dut.log_out_q5_10.value == 65535
+
+@cocotb.test()
+async def test_encryption_corner_12(dut):
+    dut.fp16_in.value = 0x3405
+    await Timer(5, unit="ns")
+    assert dut.log_out_q5_10.value == 63493
+
+@cocotb.test()
+async def test_encryption_corner_11(dut):
+    dut.fp16_in.value = 0x3801
+    await Timer(5, unit="ns")
+    assert dut.log_out_q5_10.value == 64513
+
+
+@cocotb.test()
+async def test_encryption_corner_10(dut):
+    dut.fp16_in.value = 0x3C01
+    await Timer(5, unit="ns")
+    assert dut.log_out_q5_10.value == 1
+
+@cocotb.test()
+async def test_encryption_corner_9(dut):
+    dut.fp16_in.value = 0x47E1
+    await Timer(5, unit="ns")
+    assert dut.log_out_q5_10.value == 3041
+
+
+
+
+
+@cocotb.test()
+async def test_encryption_corner_8(dut):
+    dut.fp16_in.value = 0x45B2
+    await Timer(5, unit="ns")
+    assert dut.log_out_q5_10.value == 2482
+
+
+
+@cocotb.test()
+async def test_encryption_corner_7(dut):
+    dut.fp16_in.value = 0x426A
+    await Timer(5, unit="ns")
+    assert dut.log_out_q5_10.value == 1642
+
+
+#@cocotb.test()
+#async def test_encryption_corner_6(dut):
+#    dut.fp16_in.value = 0x41D3
+#    await Timer(5, unit="ns")
+#    assert dut.log_out_q5_10.value == 1235
+
+
+#@cocotb.test()
+#async def test_encryption_corner_5(dut):
+#    dut.fp16_in.value = 0x4127
+#    await Timer(5, unit="ns")
+#    assert dut.log_out_q5_10.value == 1063
+
+
+@cocotb.test()
+async def test_encryption_corner_4(dut):
+    dut.fp16_in.value = 0x43FF
+    await Timer(5, unit="ns")
+    assert dut.log_out_q5_10.value == 2047
+
+@cocotb.test()
+async def test_encryption_corner_3(dut):
+    dut.fp16_in.value = 0x4001
+    await Timer(5, unit="ns")
+    assert dut.log_out_q5_10.value == 1025
+
+
+@cocotb.test()
+async def test_encryption_corner_2(dut):
+    """Large exponent"""
+    dut.fp16_in.value = 0x7800
+    await Timer(5, unit="ns")
+    assert dut.log_out_q5_10.value == 15360
+
+
+#@cocotb.test()
+#async def test_encryption_corner_1(dut):
+#    """Smallest normalized value"""
+#    dut.fp16_in.value = 0x0400
+#    await Timer(5, unit="ns")
+#    assert dut.log_out_q5_10.value == 54272
+
+
+
+
+
+
+
+
 # CRITICAL: Pytest wrapper function
 def test_logconv_runner():
     import os
